@@ -5,8 +5,6 @@ const jwt = require("jsonwebtoken");
 const { registerValidation, loginValidation } = require("../validation");
 const bcrypt = require("bcryptjs");
 
-
-
 router.post("/register", async (req, res) => {
   //validate the values with register validation
   const { error } = registerValidation(req.body);
@@ -29,7 +27,6 @@ router.post("/register", async (req, res) => {
   });
 
   try {
-    // return the user information with the token 
     const savedUser = await user.save();
     const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET);
     res.header("auth-token", token);
@@ -38,8 +35,6 @@ router.post("/register", async (req, res) => {
     res.status(400).send(err);
   }
 });
-
-
 
 //login
 router.post("/login", async (req, res) => {
