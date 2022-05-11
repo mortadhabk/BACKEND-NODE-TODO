@@ -4,8 +4,8 @@ A TODO LIST BACKEND with JWT authentification
 ...................................................
 Run Code : 
   1) change the DB_CONNECT 
-  2) npm install 
-  3) npm start
+  2) yarn install 
+  3) yarn start
 ..................................................
 Test apis with postman : 
   1) register : POST http://localhost:3000/register/ 

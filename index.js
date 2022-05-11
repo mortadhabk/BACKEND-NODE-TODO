@@ -7,7 +7,6 @@ var cors = require('cors');
 //Import routes
 
 const authRoute = require("./routes/auth");
-const userRoute = require("./routes/user");
 const tasks = require("./routes/tasks");
 
 dotenv.config();
@@ -30,6 +29,5 @@ app.all('/*', function(req, res, next) {
 
 //Route Middleware
 app.use("", authRoute);
-app.use("", userRoute);
 app.use("/api/tasks", tasks);
 app.listen(3000, () => console.log("le server marche bien "));
